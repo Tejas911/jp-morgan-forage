@@ -1,0 +1,58 @@
+// ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+// ┃ ██████ ██████ ██████       █      █      █      █      █ █▄  ▀███ █       ┃
+// ┃ ▄▄▄▄▄█ █▄▄▄▄▄ ▄▄▄▄▄█  ▀▀▀▀▀█▀▀▀▀▀ █ ▀▀▀▀▀█ ████████▌▐███ ███▄  ▀█ █ ▀▀▀▀▀ ┃
+// ┃ █▀▀▀▀▀ █▀▀▀▀▀ █▀██▀▀ ▄▄▄▄▄ █ ▄▄▄▄▄█ ▄▄▄▄▄█ ████████▌▐███ █████▄   █ ▄▄▄▄▄ ┃
+// ┃ █      ██████ █  ▀█▄       █ ██████      █      ███▌▐███ ███████▄ █       ┃
+// ┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
+// ┃ Copyright (c) 2017, the Perspective Authors.                              ┃
+// ┃ ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌ ┃
+// ┃ This file is part of the Perspective library, distributed under the terms ┃
+// ┃ of the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0). ┃
+// ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+@import (reference) url(./column-selector.less);
+
+:host {
+    #column_settings_sidebar {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    #column_settings_icon:before {
+        @include icon;
+        height: 14px;
+        width: 14px;
+        -webkit-mask-image: var(--column-settings-icon--mask-image);
+        mask-image: var(--column-settings-icon--mask-image);
+    }
+
+    // NOTE: These should probably make their way to global form styling eventually.
+    .errored {
+        outline-color: var(--error--color);
+    }
+
+    .item_title {
+        font-size: 9px;
+    }
+
+    input {
+        &[type="text"],
+        &[type="search"] {
+            outline: 1px solid;
+            outline-color: var(--inactive--color);
+            background-color: var(--plugin--background);
+            border: none;
+            margin-bottom: 0.5em;
+            font-family: inherit;
+            font-size: 12px;
+            &:disabled {
+                background-color: var(--inactive--color);
+            }
+        }
+
+        &[type="search"] {
+            min-height: 24px;
+            border-radius: 2px;
+        }
+    }
+}
